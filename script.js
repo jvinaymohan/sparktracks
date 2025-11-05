@@ -34,6 +34,17 @@ document.getElementById('navLoginLink')?.addEventListener('click', function(e) {
     });
 });
 
+// Hero login link
+document.getElementById('heroLoginLink')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('signupForm').style.display = 'none';
+    document.getElementById('loginForm').style.display = 'block';
+    document.getElementById('signup').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+});
+
 // Toggle between signup and login forms
 document.getElementById('showLoginLink')?.addEventListener('click', function(e) {
     e.preventDefault();
@@ -81,11 +92,11 @@ document.getElementById('signupForm')?.addEventListener('submit', async function
             role: formData.role
         });
         
-        // Open app in new tab or redirect
-        window.location.href = `/register?${params.toString()}`;
+        // Show success message instead of redirecting (app not deployed yet)
+        alert(`🎉 Thank you for signing up, ${formData.name}!\n\nWe've received your registration. The full app will be available soon!\n\nWe'll send you an email at ${formData.email} when it's ready!`);
         
-        // Alternative: Show success and provide link
-        // alert(`Welcome to Sparktracks, ${formData.name}! Redirecting to the app...`);
+        // Clear the form
+        this.reset();
         
     } catch (error) {
         console.error('Error:', error);
@@ -116,8 +127,11 @@ document.getElementById('loginForm')?.addEventListener('submit', async function(
         
         console.log('Login:', formData);
         
-        // Redirect to app
-        window.location.href = `/login?email=${encodeURIComponent(formData.email)}`;
+        // Show message instead of redirecting (app not deployed yet)
+        alert('🎉 Welcome back!\n\nThe full app will be available soon. We\'ll send you an email when you can log in!\n\nThank you for your patience!');
+        
+        // Clear the form
+        this.reset();
         
     } catch (error) {
         console.error('Error:', error);
