@@ -588,6 +588,69 @@ body {
     color: var(--neutral-600);
 }
 
+/* About Section */
+.about-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-story {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.about-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+}
+
+.about-story h3 {
+    color: var(--primary-600);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.about-signature {
+    margin-top: 2.5rem;
+    font-size: 1.3rem;
+    color: var(--primary-600);
+    font-weight: 700;
+    font-style: italic;
+}
+
+.founder-title {
+    display: block;
+    font-size: 1rem;
+    color: #888;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 0.5rem;
+}
+
 /* Footer */
 .footer {
     background: var(--neutral-900);
