@@ -45,6 +45,17 @@ document.getElementById('heroLoginLink')?.addEventListener('click', function(e) 
     });
 });
 
+// Nav signup link
+document.getElementById('navSignupLink')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('signupForm').style.display = 'block';
+    document.getElementById('signup').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+});
+
 // Toggle between signup and login forms
 document.getElementById('showLoginLink')?.addEventListener('click', function(e) {
     e.preventDefault();
