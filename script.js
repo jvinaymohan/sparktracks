@@ -103,8 +103,12 @@ document.getElementById('signupForm')?.addEventListener('submit', async function
             role: formData.role
         });
         
-        // Show success message instead of redirecting (app not deployed yet)
-        alert(`🎉 Thank you for signing up, ${formData.name}!\n\nWe've received your registration. The full app will be available soon!\n\nWe'll send you an email at ${formData.email} when it's ready!`);
+        // Redirect to deployed app
+        alert(`🎉 Welcome to Sparktracks, ${formData.name}! Redirecting to the app...`);
+        
+        // Redirect to main app with pre-filled data
+        const appUrl = 'https://jvinaymohan.github.io/sparktracks-mvp';
+        window.location.href = `${appUrl}/register?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}&role=${formData.role}`;
         
         // Clear the form
         this.reset();
@@ -138,8 +142,12 @@ document.getElementById('loginForm')?.addEventListener('submit', async function(
         
         console.log('Login:', formData);
         
-        // Show message instead of redirecting (app not deployed yet)
-        alert('🎉 Welcome back!\n\nThe full app will be available soon. We\'ll send you an email when you can log in!\n\nThank you for your patience!');
+        // Redirect to deployed app
+        alert('🎉 Logging you in to Sparktracks...');
+        
+        // Redirect to main app login
+        const appUrl = 'https://jvinaymohan.github.io/sparktracks-mvp';
+        window.location.href = `${appUrl}/login?email=${encodeURIComponent(formData.email)}`;
         
         // Clear the form
         this.reset();
